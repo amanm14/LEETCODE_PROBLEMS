@@ -1,3 +1,6 @@
+// Time: O(n)
+// Space: O(n)
+
 class Solution {
 public:
     string clearDigits(string s) {
