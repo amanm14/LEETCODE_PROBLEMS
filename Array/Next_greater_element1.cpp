@@ -1,4 +1,4 @@
-// TC-> O(n) SC->O(1) Its stack qus i solved it without it 
+// TC-> O(n) SC->O(1) Its stack qus i solved without it 
 
 class Solution {
 public:
@@ -21,4 +21,5 @@ public:
         }
         return nums1;
     }
+
 };
