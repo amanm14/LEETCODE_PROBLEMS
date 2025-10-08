@@ -1,6 +1,20 @@
 // TC -> O(n)
 // SC -> O(n)
 
+// Case 1->
+// Input
+// s ="badc"
+// t ="baba"
+// Output
+// false
+
+// Cae 2
+// Input
+// s =
+// "paper"
+// t =
+// "title"
+
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
