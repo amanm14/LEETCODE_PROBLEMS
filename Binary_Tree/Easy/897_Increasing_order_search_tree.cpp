@@ -22,14 +22,14 @@ public:
     //     return dummy->right; // new root
     // } //O(N) nd SC O(n)
     TreeNode* increasingBST(TreeNode* root) {
-        if(!root) return ;
+        if(!root) return NULL;
         TreeNode*dummy=new TreeNode(-1);
         TreeNode*curr=dummy;
         solve(root,curr);
         return dummy->right;
     }
     void solve(TreeNode*root,TreeNode*&curr){ //O(N) nd space we are not using exrtra vector only O(H) stack call of recursion
-        if(!root) return NULL;
+        if(!root) return ;
         solve(root->left,curr);
         root->left=NULL;
         curr->right=root;
