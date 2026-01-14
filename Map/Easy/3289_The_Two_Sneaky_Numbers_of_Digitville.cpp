@@ -1,5 +1,5 @@
 class Solution {
-public://tc is O(n) and sc is O(nlogn)
+public://sc is O(n) and tc is O(nlogn)
     vector<int> getSneakyNumbers(vector<int>& nums) {
         int size=nums.size();
         vector<int>ans;//O(n)
