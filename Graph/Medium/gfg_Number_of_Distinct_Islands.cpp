@@ -2,7 +2,8 @@
 
 class Solution {
   public://O(n*m) is tc and sc with extr set and vector storage
-    vector<pair<int,int>> bfs(int i,int j,vector<vector<int>>&vis,vector<vector<int>>&grid){
+    vector<pair<int,int>> bfs(int i,int j,vector<vector<int>>&vis,vector<vector<int>>&grid){//for dfs we include 
+      //int i and j two times one times as updated and second time as base index to subtract and call dfs recursion instead of queue and bfs
         int n=grid.size();
         int m=grid[0].size();
         queue<pair<int,int>>q;
