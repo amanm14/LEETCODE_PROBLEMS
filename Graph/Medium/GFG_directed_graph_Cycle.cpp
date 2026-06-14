@@ -23,7 +23,7 @@ class Solution {
         // code here
         vector<vector<int>>adjMat(V);
 
-    for(int i=0;i<edges.size();i++)
+    for(int i=0;i<edges.size();i++)//also there is no need to create a adjMat coz adj vector itself can be work like adjMat
     {
         int u = edges[i][0];
         int v = edges[i][1];
