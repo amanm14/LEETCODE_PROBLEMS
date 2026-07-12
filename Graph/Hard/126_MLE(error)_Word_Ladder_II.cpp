@@ -61,3 +61,89 @@ public://Time complexity is impossibel to predict it will depend example to exma
         return ans;
     }
 };
+
+//BFS + parent map + DFS reconstruction approach
+
+class Solution {
+public://Above one is accepted and interview oriented question we can skip this one
+    unordered_map<string, vector<string>> parent;
+    vector<vector<string>> ans;
+    vector<string> path;
+
+    void dfs(string word, string &beginWord) {
+
+        path.push_back(word);
+
+        if (word == beginWord) {
+            vector<string> temp = path;
+            reverse(temp.begin(), temp.end());
+            ans.push_back(temp);
+        }
+        else {
+            for (auto &par : parent[word]) {
+                dfs(par, beginWord);
+            }
+        }
+
+        path.pop_back();
+    }
+
+    vector<vector<string>> findLadders(string beginWord, string endWord,
+                                       vector<string>& wordList) {
+
+        unordered_set<string> dict(wordList.begin(), wordList.end());
+
+        if (!dict.count(endWord))
+            return {};
+
+        unordered_set<string> currLevel, nextLevel;
+
+        currLevel.insert(beginWord);
+
+        bool found = false;
+
+        while (!currLevel.empty() && !found) {
+
+            // Remove current level words from dictionary
+            for (auto &w : currLevel)
+                dict.erase(w);
+
+            for (auto &word : currLevel) {
+
+                string temp = word;
+
+                for (int i = 0; i < temp.size(); i++) {
+
+                    char original = temp[i];
+
+                    for (char ch = 'a'; ch <= 'z'; ch++) {
+
+                        temp[i] = ch;
+
+                        if (!dict.count(temp))
+                            continue;
+
+                        nextLevel.insert(temp);
+
+                        parent[temp].push_back(word);
+
+                        if (temp == endWord)
+                            found = true;
+                    }
+
+                    temp[i] = original;
+                }
+            }
+
+            currLevel = nextLevel;
+            nextLevel.clear();
+        }
+
+        if (!found)
+            return {};
+
+        dfs(endWord, beginWord);
+
+        return ans;
+    }
+};
