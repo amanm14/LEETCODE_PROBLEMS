@@ -1,5 +1,5 @@
 class Solution {
-public:
+public://O(n*m) is tc and sc is O(n)
     vector<int> findDegrees(vector<vector<int>>& matrix) {
         vector<int>ans(matrix.size());
         for(int i=0;i<matrix.size();i++)
