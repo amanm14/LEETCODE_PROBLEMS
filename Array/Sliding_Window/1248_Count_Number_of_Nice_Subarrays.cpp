@@ -20,7 +20,7 @@
 //     }
 // };
 class Solution {
-public:
+public://O(n) is tc and O(1) is sc
     int numberOfSubarrays(vector<int>& nums, int k) {
         int ans = 0, oddCount = 0, left = 0;
         int currentCount = 0; // Tracks consecutive even numbers at the start of the window
