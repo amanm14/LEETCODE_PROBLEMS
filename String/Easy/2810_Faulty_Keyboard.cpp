@@ -1,0 +1,18 @@
+class Solution {
+public://O(n^2) is tc and sc is O(n)
+    string finalString(string s) {
+        string ans="";
+        for(int i=0;i<s.length();i++)
+        {
+            if(s[i]=='i')
+            {
+                reverse(ans.begin(),ans.end());
+                
+            }
+            else {
+                ans.push_back(s[i]);
+            }
+        }
+        return ans;
+    }
+};
